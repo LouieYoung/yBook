@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="book" extends="struts-default" namespace="/">
+
+        <!--admin的action-->
+        <action name="admingeneralusermanage" class="com.action.AdmingeneralusermanageAction" method="adminmanage">
+            <result name="success">/adminGeneralUserManage.jsp</result>
+        </action>
+        <action name="adminaddbooktype" class="com.action.adminaddbooktypeAction" method="adminaddbooktype">
+            <result name="success">/success.jsp</result>
+        </action>
+        <action name="admingeneralbooktypemanage" class="com.action.AdmingeneralusermanageAction" method="admingeneralbooktype">
+            <result name="success">/adminGeneralBooktypeManage.jsp</result>
+        </action>
+        <action name="admingeneralbookmanage" class="com.action.AdmingeneralusermanageAction" method="admingeneralbookmanage">
+            <result name="success">/adminGeneralBookManage.jsp</result>
+        </action>
+        <action name="admingeneralafficheadd" class="com.action.AfficheAction" method="afficheadd">
+            <result name="success">/success1.jsp</result>
+        </action>
+        <action name="admingeneralaffichedelete" class="com.action.AfficheAction" method="deleteaffiche">
+            <result name="success">/success1.jsp</result>
+        </action>
+        <action name="admingeneralaffichelist" class="com.action.AfficheAction" method="admingeneralaffiche">
+            <result name="success">/adminGeneralAfficheManage.jsp</result>
+        </action>
+        <action name="deleteuesr" class="com.action.AdmingeneralusermanageAction" method="deleteuesr">
+            <result name="success">/adminGeneralUserManage.jsp</result>
+        </action>
+        <action name="deletebook" class="com.action.AdmingeneralusermanageAction" method="deletebook">
+            <result name="success">/adminGeneralBookManage.jsp</result>
+        </action>
+        <action name="deleteaffiche" class="com.action.AfficheAction" method="deleteaffiche">
+            <result name="success">/adminGeneralAfficheManage.jsp</result>
+        </action>
+
+
+
+    <action name="user" class="com.action.UserAction" method="login">
+        <result name="success">/userDetail.jsp</result>
+        <result name="error">/userlogin.jsp</result>
+    </action>
+
+    <action name="login" class="com.action.UserLoginAction" method="login">
+        <result name="success">/userDetail.jsp</result>
+        <result name="login">/userloginerror.jsp</result>
+    </action>
+    <action name="logout" class="com.action.UserLoginAction" method="logout">
+        <result name="success">/index.jsp</result>
+    </action>
+    <action name="changepassword" class="com.action.UserLoginAction" method="changepassword">
+        <result name="success">/userSecuritySuccess.jsp</result>
+        <result name="error">/userSecurityError.jsp</result>
+    </action>
+    <action name="adminlogin" class="com.action.AdminLoginAction" method="login">
+        <result name="systemadmin">/adminSuper.jsp</result>
+        <result name="admin">/adminGeneral.jsp</result>
+        <result name="error">/adminloginerror.jsp</result>
+    </action>
+    <action name="regist" class="com.action.UserRegistAction" method="regist">
+        <result name="success">/userdetailregist.jsp</result>
+        <result name="error">/userregisterror.jsp</result>
+        <result name="toosmall">/userregisttoosmall.jsp</result>
+        <result name="alreadyexits">/userregistalreadyexits.jsp</result>
+        <result name="notsame">/userregistnotsame.jsp</result>
+    </action>
+    <action name="datailRegist" class="com.action.UserdetailsRegistAction" method="detailRegist">
+        <result name="success">/userregistsuccess.jsp</result>
+        <result name="error">/userregisterror.jsp</result>
+    </action>
+    <action name="datailChange" class="com.action.UserdetailsRegistAction" method="datailChange">
+        <result name="success">/userDetail.jsp</result>
+        <result name="error">/userDetail.jsp</result>
+    </action>
+    <action name="booklist" class="com.action.BookAction" method="book">
+        <result name="success">/book.jsp</result>
+    </action>
+    <action name="useruploadbook" class="com.action.BookAction" method="useruploadbook">
+        <result name="success">/userUploadBook.jsp</result>
+    </action>
+    <action name="addbook" class="com.action.BookAction" method="addbook">
+        <result name="success">/userAlreadyUpload.jsp</result>
+        <result name="error">/userAlreadyUpload.jsp</result>
+    </action>
+    <action name="affichelist" class="com.action.AfficheAction" method="affiche">
+        <result name="success">/affiche.jsp</result>
+    </action>
+    <action name="booktypelist" class="com.action.BookTypeAction" method="booktype">
+        <result name="success">/booktype.jsp</result>
+    </action>
+    <action name="index" class="com.action.IndexAction" method="index">
+        <result name="success">/indexpage.jsp</result>
+    </action>
+
+    <action name="bookdetail" class="com.action.BookDetailAction" method="bookdetail">
+        <result name="success">/bookDetail.jsp</result>
+    </action>
+
+    <!--        <action name="bookchange" class="com.action.AlreadyUploadAction" method="bookchange">-->
+    <!--            <result name="success">/userModifyBook.jsp</result>-->
+    <!--        </action>-->
+    <!--        <action name="bookchanged" class="com.action.AlreadyUploadAction" method="bookchanged">-->
+    <!--            <result name="success">/userAlreadyUpload.jsp</result>-->
+    <!--        </action>-->
+
+    <action name="bookdelete" class="com.action.AlreadyUploadAction" method="bookdelete">
+        <result name="success">/userAlreadyUpload.jsp</result>
+        <result name="error">/userAlreadyUploadError.jsp</result>
+    </action>
+
+    <action name="orderdetail" class="com.action.OrderDetailAction" method="orderdetail">
+        <result name="success">/orderDetail.jsp</result>
+    </action>
+
+    <action name="quickquery" class="com.action.QuickQueryAction" method="quickquery">
+        <result name="success">/quickQuery.jsp</result>
+    </action>
+
+    <action name="alreadyuploadlist" class="com.action.AlreadyUploadAction" method="alreadybook">
+        <result name="success">/userAlreadyUpload.jsp</result>
+
+    </action>
+    <action name="alreadyuploadsearch" class="com.action.AlreadyUploadAction" method="search">
+        <result name="success">/userAlreadyUpload.jsp</result>
+
+    </action>
+
+    <action name="orderlist" class="com.action.EffectiveOrderAction" method="effectiveorder">
+        <result name="success">/userEffectiveOrder.jsp</result>
+    </action>
+    <action name="adminorderlist" class="com.action.EffectiveOrderAction" method="adminorderlist">
+        <result name="success">/adminGeneralOrderManage.jsp</result>
+    </action>
+    <action name="guestbooklist" class="com.action.GuestBookAction" method="guestbook">
+        <result name="success">/guestBook.jsp</result>
+    </action>
+    <action name="adminguestbooklist" class="com.action.GuestBookAction" method="adminguestbook">
+        <result name="success">/adminGeneralGuestbookManage.jsp</result>
+    </action>
+    <action name="adminguestbookdelete" class="com.action.GuestBookAction" method="adminguestbookdelete">
+        <result name="success">/adminGeneralGuestbookManage.jsp</result>
+        <result name="error">/adminGeneralGuestbookManage.jsp</result>
+    </action>
+    <action name="adminsuperadminadd" class="com.action.AdminSuperAdminAction" method="add">
+        <result name="success">/adminSuperAdminAdd.jsp</result>
+    </action>
+    <action name="adminsuperadminlist" class="com.action.AdminSuperAdminAction" method="list">
+        <result name="success">/adminSuperAdminManage.jsp</result>
+    </action>
+    <action name="adminsuperadmindelete" class="com.action.AdminSuperAdminAction" method="delete">
+        <result name="success">/adminSuper.jsp</result>
+    </action>
+    <action name="guestbooklist1" class="com.action.GuestBookAction" method="handleliuyan">
+        <result name="success">/guestBook.jsp</result>
+    </action>
+    <action name="cartlist" class="com.action.ShopCartAction" method="cartbook">
+        <result name="success">/userShopCart.jsp</result>
+    </action>
+    <action name="cartlist2" class="com.action.ShopCartAction" method="cartbook2">
+        <result name="success">/userShopCart.jsp</result>
+    </action>
+    <action name="cartlist1" class="com.action.ShopCartAction" method="cartbook1">
+        <result name="success">/userShopCart.jsp</result>
+        <result name="error">/userlogin.jsp</result>
+    </action>
+    <action name="cartlist0" class="com.action.ShopCartAction" method="cartbook0">
+        <result name="success">/userShopCart.jsp</result>
+    </action>
+    <action name="orderok" class="com.action.ShopCartAction" method="orderok">
+        <result name="success" >/userShopCart.jsp</result>
+    </action>
+    <action name="deletecart" class="com.action.ShopCartAction" method="deletecart">
+        <result name="success">/userShopCart.jsp</result>
+    </action>
+    </package>
+</struts>

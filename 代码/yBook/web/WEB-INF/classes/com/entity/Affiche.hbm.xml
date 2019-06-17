@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.entity.Affiche" table="t_affiche">
+        <id name="id" column="id">
+            <!--设置数据库表id增长
+            native生成表id值就是主键自动增长
+            -->
+            <generator class="native"></generator>
+        </id>
+        <!--配置其他属性对应关系-->
+        <property name="title" column="title"></property>
+        <property name="content" column="content"></property>
+        <property name="addtime" column="addtime"></property>
+        <many-to-one name="admin" lazy="false" class="com.entity.Admin" column="aid"></many-to-one>
+    </class>
+</hibernate-mapping>
+    

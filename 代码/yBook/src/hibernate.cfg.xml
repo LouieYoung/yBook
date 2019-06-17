@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--1配置数据库信息 必须的-->
+<!--        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
+<!--        <property name="hibernate.connection.url"><![CDATA[jdbc:mysql://localhost:3306/ybook?useUnicode=true&characterEncoding=utf8]]></property>-->
+<!--        <property name="hibernate.connection.username">root</property>-->
+<!--        <property name="hibernate.connection.password">123456</property>-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url"><![CDATA[jdbc:mysql://w.rdc.sae.sina.com.cn:3306/app_ybook?useUnicode=true&characterEncoding=utf8]]></property>
+        <property name="hibernate.connection.username">zmmo3m4k15</property>
+        <property name="hibernate.connection.password">kx251mykxw555j05555xw414lil52k0412ix0xmw</property>
+
+
+        <!--2配置hibernate信息 可选的-->
+        <!--输出底层sql语句-->
+        <property name="hibernate.show_sql">true</property>
+        <!--sql语句格式化-->
+        <property name="hibernate.format_sql">true</property>
+        <!--
+        hibernate帮助创建表，需要配置之后
+        update：如果有表则更新，没有则创建
+        -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!--配置数据库方言
+            在mysql中实现分页 关键字limit，只能使用mysql里面
+            让hibernate框架识别不同数据库语言自己特有的语言
+        -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--与本地线程绑定-->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!--3把映射文件放到核心配置文件中-->
+        <mapping resource="com/entity/User.hbm.xml"></mapping>
+        <mapping resource="com/entity/Order.hbm.xml"></mapping>
+        <mapping resource="com/entity/Major.hbm.xml"></mapping>
+        <mapping resource="com/entity/Book.hbm.xml"></mapping>
+        <mapping resource="com/entity/Booktype.hbm.xml"></mapping>
+        <mapping resource="com/entity/Admin.hbm.xml"></mapping>
+        <mapping resource="com/entity/Affiche.hbm.xml"></mapping>
+        <mapping resource="com/entity/Guestbook.hbm.xml"></mapping>
+
+    </session-factory>
+</hibernate-configuration>

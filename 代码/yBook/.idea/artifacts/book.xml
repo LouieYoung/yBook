@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="book">
+    <output-path>$PROJECT_DIR$/out/artifacts/book</output-path>
+    <root id="archive" name="book.war">
+      <element id="artifact" artifact-name="book:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="dir-copy" path="D:/Apps/Tomcat9/apache-tomcat-9.0.20" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

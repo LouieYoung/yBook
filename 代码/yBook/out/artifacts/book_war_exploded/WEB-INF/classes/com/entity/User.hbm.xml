@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--配置类和表对应
+        class标签
+        name属性：实体类全路径
+        table属性：数据库表名
+        -->
+    <class name="com.entity.User" table="t_user">
+        <!--
+        2配置实体类id和表id对应
+        hibernate要求每一个实体类有一个属性唯一值
+        hibernate要求表有字段为唯一值
+        -->
+        <!--
+        id标签
+        name：实体类里面id属性名称
+        colum属性：生成的表的字段名称
+        -->
+        <id name="id" column="uid">
+            <!--设置数据库表id增长
+            native生成表id值就是主键自动增长
+            -->
+            <generator class="native"></generator>
+        </id>
+        <!--配置其他属性对应关系-->
+        <property name="username" column="name"></property>
+        <property name="password" column="password"></property>
+        <property name="realname" column="realname"></property>
+        <property name="sid" column="sid"></property>
+        <property name="gender" column="gender"></property>
+        <property name="phone" column="phone"></property>
+        <property name="email" column="email"></property>
+        <!--一对多user-order-->
+        <set name="orderSet" lazy="false" cascade="save-update,delete" >
+            <key column="uid"></key>
+            <one-to-many class="com.entity.Order"></one-to-many>
+        </set>
+
+        <!--多对一Major-->
+        <many-to-one name="major" lazy="false" class="com.entity.Major" column="mid"></many-to-one>
+
+    </class>
+</hibernate-mapping>
+    

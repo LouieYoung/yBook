@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.entity.Book" table="t_book">
+        <!--
+        2配置实体类id和表id对应
+        hibernate要求每一个实体类有一个属性唯一值
+        hibernate要求表有字段为唯一值
+        -->
+        <!--
+        id标签
+        name：实体类里面id属性名称
+        colum属性：生成的表的字段名称
+        -->
+        <id name="id" column="id">
+            <!--设置数据库表id增长
+            native生成表id值就是主键自动增长
+            -->
+            <generator class="native"></generator>
+        </id>
+        <!--配置其他属性对应关系-->
+        <property name="uid" column="uid"></property>
+        <property name="cid" column="cid"></property>
+        <property name="state" column="state"></property>
+        <property name="price" column="price"></property>
+        <property name="adddate" column="adddate"></property>
+        <property name="bookname" column="bookname"></property>
+        <property name="pic" column="pic"></property>
+        <property name="introduction" column="introduction"></property>
+        <many-to-one name="order" lazy="false" class="com.entity.Order" column="oid"></many-to-one>
+        <many-to-one name="booktype" lazy="false" class="com.entity.Booktype" column="btid"></many-to-one>
+
+
+    </class>
+</hibernate-mapping>
+    
